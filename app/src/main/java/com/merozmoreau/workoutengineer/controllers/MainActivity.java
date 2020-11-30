@@ -1,10 +1,13 @@
-package com.merozmoreau.workoutengineer;
+package com.merozmoreau.workoutengineer.controllers;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.merozmoreau.workoutengineer.R;
+import com.merozmoreau.workoutengineer.utils.OptionsMenuGeneral;
+
+public class MainActivity extends OptionsMenuGeneral {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
