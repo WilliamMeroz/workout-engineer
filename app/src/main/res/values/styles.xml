@@ -10,6 +10,10 @@
     <!-- Custom default theme colors -->
     <style name="CustomAppTheme" parent="AppTheme">
         <item name="titleTextColor">@color/titleTextColor</item>
-        <item name="iconTint">#000000</item>
+        <item name="iconTint">@color/iconTint</item>
+    </style>
+
+    <style name="BlackOverflow" parent="Widget.AppCompat.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_baseline_more_vert_black_24</item>
     </style>
 </resources>

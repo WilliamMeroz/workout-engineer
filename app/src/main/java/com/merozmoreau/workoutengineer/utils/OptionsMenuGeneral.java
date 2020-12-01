@@ -10,6 +10,7 @@ import android.view.MenuItem;
 
 import com.merozmoreau.workoutengineer.R;
 
+// I know that technically, this class is an Activity but I still consider it to be a util class since it is used on other activities.
 public class OptionsMenuGeneral extends AppCompatActivity {
 
     private final String TAG = "optionsMenu";

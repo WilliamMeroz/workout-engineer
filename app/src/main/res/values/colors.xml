@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="titleTextColor">#000000</color>
+    <color name="iconTint">#000000</color>
+    <color name="basicTextColor">#000000</color>
 </resources>
