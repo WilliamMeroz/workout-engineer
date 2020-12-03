@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "718160060510",
+    "firebase_url": "https://workoutengineer-10680.firebaseio.com",
+    "project_id": "workoutengineer-10680",
+    "storage_bucket": "workoutengineer-10680.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718160060510:android:3654ae624ca9e1f88454cf",
+        "android_client_info": {
+          "package_name": "com.merozmoreau.workoutengineer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718160060510-3kguj474sfeqkuvrpmc5pa1vfv70ben5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1nE6Xvj4477iMqu2n_yY2NXZGuw8Hq-A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718160060510-3kguj474sfeqkuvrpmc5pa1vfv70ben5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
