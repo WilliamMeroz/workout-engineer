@@ -1,6 +1,9 @@
 package com.merozmoreau.workoutengineer.models;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 // Workout model to encapsulate the information about each workouts the user creates.
 public class Workout {
@@ -9,6 +12,8 @@ public class Workout {
     private List<Exercise> exercisesList;
 
     public Workout() {
+        id = new Random().nextInt();
+        exercisesList = new ArrayList<>();
     }
 
     public Workout(int id, String name, List<Exercise> exercisesList) {
@@ -49,5 +54,14 @@ public class Workout {
         for (Exercise e : exercisesList)
             if (e.getId() == id)
                 exercisesList.remove(e);
+    }
+
+    @Override
+    public String toString() {
+        return "Workout{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", exercisesList=" + exercisesList +
+                '}';
     }
 }

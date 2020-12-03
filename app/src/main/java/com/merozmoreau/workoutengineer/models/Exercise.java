@@ -2,7 +2,7 @@ package com.merozmoreau.workoutengineer.models;
 
 // Exercise model used to encapsulate information about the exercises the user has chosen to do in their workouts.
 public class Exercise {
-    enum MuscleType {
+    public enum MuscleType {
         DELTOID,
         BICEPS,
         GLUTEUS,
@@ -16,17 +16,19 @@ public class Exercise {
     private String name;
     private MuscleType type;
     private int setNumber;
+    private int repNumber;
     private float weightUsed;
     private String description;
 
     public Exercise() {
     }
 
-    public Exercise(int id, String name, MuscleType type, int setNumber, float weightUsed, String description) {
+    public Exercise(int id, String name, MuscleType type, int setNumber, int repNumber, float weightUsed, String description) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.setNumber = setNumber;
+        this.repNumber = repNumber;
         this.weightUsed = weightUsed;
         this.description = description;
     }
@@ -59,6 +61,14 @@ public class Exercise {
         return setNumber;
     }
 
+    public int getRepNumber() {
+        return repNumber;
+    }
+
+    public void setRepNumber(int repNumber) {
+        this.repNumber = repNumber;
+    }
+
     public void setSetNumber(int setNumber) {
         this.setNumber = setNumber;
     }
@@ -77,5 +87,18 @@ public class Exercise {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Exercise{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", type=" + type +
+                ", setNumber=" + setNumber +
+                ", repNumber=" + repNumber +
+                ", weightUsed=" + weightUsed +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
