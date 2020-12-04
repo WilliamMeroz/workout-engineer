@@ -6,4 +6,5 @@
     <string name="button_create_workout">Create workout</string>
     <string name="button_edit_workout">Edit Workout</string>
     <string name="button_start_workout">Start Workout</string>
+    <string name="create_workout_button">Create workout</string>
 </resources>

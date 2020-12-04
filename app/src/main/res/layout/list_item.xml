@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent_layout">
+
+    <LinearLayout
+        android:layout_margin="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/exercise_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exercise name"
+            android:ellipsize="end"
+            android:textSize="22sp"
+            android:textColor="@color/basicTextColor" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
