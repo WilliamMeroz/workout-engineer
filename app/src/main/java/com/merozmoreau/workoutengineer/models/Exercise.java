@@ -1,7 +1,9 @@
 package com.merozmoreau.workoutengineer.models;
 
+import java.io.Serializable;
+
 // Exercise model used to encapsulate information about the exercises the user has chosen to do in their workouts.
-public class Exercise {
+public class Exercise implements Serializable {
     public enum MuscleType {
         DELTOID,
         BICEPS,

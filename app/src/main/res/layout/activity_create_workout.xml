@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".controllers.CreateWorkoutActivity">
+
+    <TableLayout
+        android:id="@+id/create_workout_table_layout"
+        android:stretchColumns="*"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_exercise"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_headers"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_sets"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_headers"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_headers_rep"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_headers"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_headers_weight"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_headers"/>
+        </TableRow>
+       <!-- <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exercise_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_exercise"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_header_sets"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_rep"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_weight"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="number"
+                android:background="@drawable/cell_shape_general"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exercise_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_exercise"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_header_sets"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_rep"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_weight"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="number"
+                android:background="@drawable/cell_shape_general"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exercise_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_exercise"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_header_sets"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_rep"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_weight"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="number"
+                android:background="@drawable/cell_shape_general"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exercise_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_exercise"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_header_sets"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_rep"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_weight"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="number"
+                android:background="@drawable/cell_shape_general"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/exercise_name_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/table_header_exercise"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_header_sets"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_rep"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="numberSigned"
+                android:background="@drawable/cell_shape_general"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/table_headers_weight"
+                android:textColor="@color/basicTextColor"
+                android:textSize="22sp"
+                android:padding="5dp"
+                android:inputType="number"
+                android:background="@drawable/cell_shape_general"/>
+        </TableRow> -->
+
+        <TableRow
+            android:layout_marginTop="40dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/button_create_workout"
+                android:layout_gravity="center"/>
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>

@@ -6,4 +6,5 @@
     <color name="titleTextColor">#000000</color>
     <color name="iconTint">#000000</color>
     <color name="basicTextColor">#000000</color>
+    <color name="listItemSelected">#CBF3F7</color>
 </resources>

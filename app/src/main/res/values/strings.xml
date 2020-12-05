@@ -7,4 +7,11 @@
     <string name="button_edit_workout">Edit Workout</string>
     <string name="button_start_workout">Start Workout</string>
     <string name="create_workout_button">Create workout</string>
+    <string name="table_header_exercise">Exercise</string>
+    <string name="table_header_sets">Sets</string>
+    <string name="table_headers_rep">Reps</string>
+    <string name="table_headers_weight">Weight</string>
+    <string name="enter_the_name_of_your_workout_dialog">Enter the name of your workout</string>
+    <string name="done_button_text">Done</string>
+    <string name="workout_name">Workout name</string>
 </resources>

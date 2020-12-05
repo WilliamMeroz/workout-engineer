@@ -42,9 +42,7 @@ public class RequestGenerator {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONArray array = response.getJSONArray("results");
-                            Log.d("test1", "outside for loop");
                             for (int i = 0; i < array.length(); i++) {
-                                Log.d("test1", "inside for loop");
                                 JSONObject jsonObject = array.getJSONObject(i);
                                 JSONArray muscleTypeArray = jsonObject.getJSONArray("muscles");
 
@@ -55,11 +53,9 @@ public class RequestGenerator {
                                     int type = muscleTypeArray.getInt(0);
                                     exercise.setType(getMuscleType(type));
                                 }
-                                Log.d("test1", "added exercise");
                                 list.add(exercise);
                             }
                             if (callback != null) {
-                                Log.d("test1", list.toString());
                                 callback.fetchExercisesCallback(list);
                             }
 

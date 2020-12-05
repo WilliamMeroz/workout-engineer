@@ -3,7 +3,7 @@ package com.merozmoreau.workoutengineer.models;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.UUID;
+
 
 // Workout model to encapsulate the information about each workouts the user creates.
 public class Workout {
