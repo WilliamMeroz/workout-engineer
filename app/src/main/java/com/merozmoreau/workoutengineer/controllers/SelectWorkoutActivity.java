@@ -13,7 +13,6 @@ import com.merozmoreau.workoutengineer.data.WorkoutDa;
 import com.merozmoreau.workoutengineer.data.WorkoutDaCallback;
 import com.merozmoreau.workoutengineer.data.WorkoutsAdapter;
 import com.merozmoreau.workoutengineer.models.Workout;
-
 import java.util.List;
 
 public class SelectWorkoutActivity extends AppCompatActivity {

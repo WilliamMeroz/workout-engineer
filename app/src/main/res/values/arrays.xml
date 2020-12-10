@@ -1,0 +1,12 @@
+<resources>
+    <!-- Settings -->
+    <string-array name="metric_entries">
+        <item>International</item>
+        <item>Imperial</item>
+    </string-array>
+
+    <string-array name="metric_values">
+        <item>kg</item>
+        <item>lb</item>
+    </string-array>
+</resources>

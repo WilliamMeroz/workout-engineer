@@ -3,12 +3,14 @@ package com.merozmoreau.workoutengineer.utils;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.merozmoreau.workoutengineer.R;
+import com.merozmoreau.workoutengineer.controllers.SettingsActivity;
 
 // I know that technically, this class is an Activity but I still consider it to be a util class since it is used on other activities.
 public class OptionsMenuGeneral extends AppCompatActivity {
@@ -30,7 +32,8 @@ public class OptionsMenuGeneral extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_item_settings:
-                Log.d(TAG, "onOptionsItemSelected: Settings");
+                startActivity(new Intent(OptionsMenuGeneral.this, SettingsActivity.class));
+                finish();
                 break;
             case R.id.menu_item_about:
                 Log.d(TAG, "onOptionsItemSelected: About");
