@@ -19,13 +19,18 @@ public class Exercise implements Serializable {
     private MuscleType type;
     private int setNumber;
     private int repNumber;
-    private float weightUsed;
+    private int weightUsed;
     private String description;
 
     public Exercise() {
+        name = "";
+        setNumber = 0;
+        repNumber = 0;
+        weightUsed = 0;
+        description = "";
     }
 
-    public Exercise(int id, String name, MuscleType type, int setNumber, int repNumber, float weightUsed, String description) {
+    public Exercise(int id, String name, MuscleType type, int setNumber, int repNumber, int weightUsed, String description) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -75,11 +80,11 @@ public class Exercise implements Serializable {
         this.setNumber = setNumber;
     }
 
-    public float getWeightUsed() {
+    public int getWeightUsed() {
         return weightUsed;
     }
 
-    public void setWeightUsed(float weightUsed) {
+    public void setWeightUsed(int weightUsed) {
         this.weightUsed = weightUsed;
     }
 

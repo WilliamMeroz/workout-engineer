@@ -2,8 +2,6 @@ package com.merozmoreau.workoutengineer.data;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,7 +54,6 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
 
                 exerciseItemClickListener.onItemClick(exercises.get(position));
 
-
                     if (!hasBeenPicked.get(ex)) {
                         view.setBackgroundColor(context.getResources().getColor(R.color.listItemSelected));
                         hasBeenPicked.put(ex, true);
@@ -81,7 +78,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            exerciseName = itemView.findViewById(R.id.exercise_textView);
+            exerciseName = itemView.findViewById(R.id.item_text_view);
             parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }

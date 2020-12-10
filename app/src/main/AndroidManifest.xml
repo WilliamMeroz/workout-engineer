@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/CustomAppTheme">
-        <activity android:name=".controllers.CreateWorkoutActivity"></activity>
+        <activity android:name=".controllers.AlertDialogFragmentTwoButtons"></activity>
+        <activity android:name=".controllers.EditWorkoutActivity" />
+        <activity android:name=".controllers.PerformWorkoutActivity" />
+        <activity android:name=".controllers.SelectWorkoutActivity" />
+        <activity android:name=".controllers.CreateWorkoutActivity" />
         <activity android:name=".controllers.SelectExercises" />
         <activity android:name=".utils.OptionsMenuGeneral" />
         <activity android:name=".controllers.MainActivity">

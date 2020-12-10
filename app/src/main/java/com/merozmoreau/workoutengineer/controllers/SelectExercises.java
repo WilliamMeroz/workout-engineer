@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.gson.Gson;
 import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.data.ExerciseListAdapter;
 import com.merozmoreau.workoutengineer.data.RequestGenerator;
@@ -73,7 +74,12 @@ public class SelectExercises extends AppCompatActivity implements OnExerciseItem
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(SelectExercises.this, CreateWorkoutActivity.class);
-                intent.putExtra("exercises", (Serializable) selectedExercises);
+
+                ArrayList<String> tempList = new ArrayList<>();
+                for (Exercise exercise : selectedExercises)
+                    tempList.add(new Gson().toJson(exercise));
+
+                intent.putStringArrayListExtra("exercises", tempList);
 
                 startActivity(intent);
                 finish();

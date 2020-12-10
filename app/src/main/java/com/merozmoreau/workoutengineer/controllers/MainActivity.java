@@ -20,6 +20,9 @@ public class MainActivity extends OptionsMenuGeneral {
     Button editWorkoutButton;
     Button startWorkoutButton;
 
+    private final int SEND_START_WORKOUT = 1;
+    private final int SEND_EDIT_WORKOUT = 2;
+
     View.OnClickListener buttonOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -30,10 +33,14 @@ public class MainActivity extends OptionsMenuGeneral {
                 startActivity(intent);
                 finish();
             } else if (id == R.id.button_edit_workout) {
-                //intent = new Intent(MainActivity.this, ...);
+                intent = new Intent(MainActivity.this, SelectWorkoutActivity.class);
+                intent.putExtra("action_code", SEND_EDIT_WORKOUT);
+                startActivity(intent);
                 finish();
-            } else {
-                //intent = new Intent(MainActivity.this, ...);
+            } else if (id == R.id.button_start_workout){
+                intent = new Intent(MainActivity.this, SelectWorkoutActivity.class);
+                intent.putExtra("action_code", SEND_START_WORKOUT);
+                startActivity(intent);
                 finish();
             }
         }
