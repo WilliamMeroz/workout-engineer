@@ -7,4 +7,14 @@
     <color name="iconTint">#000000</color>
     <color name="basicTextColor">#000000</color>
     <color name="listItemSelected">#CBF3F7</color>
+
+    <!-- Light Theme -->
+    <color name="colorLightBackgroundColor">#FFFFFF</color>
+    <color name="colorTextLightTheme">#000000</color>
+    <color name="colorLightAppbar">#2F95F3</color>
+
+    <!-- Dark Theme -->
+    <color name="colorDarkBackgroundColor">#060070</color>
+    <color name="colorTextDarkTheme">#FFFFFF</color>
+    <color name="colorDarkAppbar">#000000</color>
 </resources>

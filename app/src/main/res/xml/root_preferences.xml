@@ -1,19 +1,19 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory app:title="Theme">
+    <PreferenceCategory app:title="@string/theme_title">
 
         <SwitchPreferenceCompat
             app:key="theme"
-            app:summaryOff="If you need more light in your life"
-            app:summaryOn="The perfect choice for night owls"
-            app:title="The theme the app will use" />
+            app:summaryOff="@string/dark_mode_off"
+            app:summaryOn="@string/dark_mode_on"
+            app:title="@string/dark_mode_title" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="Metric">
+    <PreferenceCategory app:title="@string/metric_title">
         <ListPreference
-            app:title="Metric system"
+            app:title="@string/list_preference_title"
             android:key="metric"
             android:defaultValue="metric"
             app:entries="@array/metric_entries"

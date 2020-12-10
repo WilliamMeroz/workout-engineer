@@ -16,4 +16,9 @@
     <style name="BlackOverflow" parent="Widget.AppCompat.Light.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_baseline_more_vert_black_24</item>
     </style>
+
+    <style name="CustomDarkTheme">
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:colorBackground">@color/colorDarkBackgroundColor</item>
+    </style>
 </resources>
