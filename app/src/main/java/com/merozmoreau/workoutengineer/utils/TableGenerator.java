@@ -18,11 +18,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+// Class used to generate the different tables seen in the app. It can generate a table with both editable fields or non-editable fields.
 public class TableGenerator {
     private final Context context;
     private final List<Exercise> exercises;
     private final String[] headerColumns = new String[] { "Exercise", "Sets", "Reps", "Weight" };
     private final boolean editableFields;
+    private ThemeApplier themeApplier;
 
     private HashMap<Exercise, List<EditText>> exerciseAndViews;
 
@@ -31,6 +33,7 @@ public class TableGenerator {
         this.exercises = exercises;
         this.editableFields = editableFields;
 
+        themeApplier = new ThemeApplier(context);
         exerciseAndViews = new HashMap<>();
     }
 
@@ -91,7 +94,7 @@ public class TableGenerator {
             else
                 exerciseName.setText(exercise.getName());
 
-            exerciseName.setTextColor(context.getResources().getColor(R.color.basicTextColor));
+            exerciseName.setTextColor(themeApplier.getGeneralTextColor());
             exerciseName.setTextSize(22);
             exerciseName.setPadding(5, 5, 5, 5);
             exerciseName.setBackground(context.getResources().getDrawable(R.drawable.cell_shape_general));
@@ -101,6 +104,7 @@ public class TableGenerator {
                 setsTv.setLayoutParams(new TableRow.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 setsTv.setTextColor(context.getResources().getColor(R.color.basicTextColor));
                 setsTv.setTextSize(22);
+                setsTv.setTextColor(themeApplier.getGeneralTextColor());
                 setsTv.setText(String.valueOf(exercise.getSetNumber()));
                 setsTv.setPadding(5, 5, 5, 5);
                 setsTv.setBackground(context.getResources().getDrawable(R.drawable.cell_shape_general));
@@ -109,6 +113,7 @@ public class TableGenerator {
                 repsTv.setLayoutParams(new TableRow.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 repsTv.setTextColor(context.getResources().getColor(R.color.basicTextColor));
                 repsTv.setTextSize(22);
+                repsTv.setTextColor(themeApplier.getGeneralTextColor());
                 repsTv.setText(String.valueOf(exercise.getRepNumber()));
                 repsTv.setPadding(5, 5, 5, 5);
                 repsTv.setBackground(context.getResources().getDrawable(R.drawable.cell_shape_general));
@@ -118,6 +123,7 @@ public class TableGenerator {
                 weightTv.setLayoutParams(new TableRow.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 weightTv.setTextColor(context.getResources().getColor(R.color.basicTextColor));
                 weightTv.setTextSize(22);
+                weightTv.setTextColor(themeApplier.getGeneralTextColor());
                 weightTv.setText(String.valueOf(exercise.getWeightUsed()));
                 weightTv.setPadding(5, 5, 5, 5);
                 weightTv.setBackground(context.getResources().getDrawable(R.drawable.cell_shape_general));
@@ -132,6 +138,7 @@ public class TableGenerator {
                 setsEt.setLayoutParams(new TableRow.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 setsEt.setTextColor(context.getResources().getColor(R.color.basicTextColor));
                 setsEt.setTextSize(22);
+                setsEt.setTextColor(themeApplier.getGeneralTextColor());
                 setsEt.setText(String.valueOf(exercise.getSetNumber()));
                 setsEt.setSelectAllOnFocus(true);
                 setsEt.setFilters(new InputFilter[] { new InputFilter.LengthFilter(2), numericFilter });
@@ -142,6 +149,7 @@ public class TableGenerator {
                 repsEt.setLayoutParams(new TableRow.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 repsEt.setTextColor(context.getResources().getColor(R.color.basicTextColor));
                 repsEt.setTextSize(22);
+                repsEt.setTextColor(themeApplier.getGeneralTextColor());
                 repsEt.setText(String.valueOf(exercise.getRepNumber()));
                 repsEt.setSelectAllOnFocus(true);
                 repsEt.setFilters(new InputFilter[] { new InputFilter.LengthFilter(2), numericFilter });
@@ -154,6 +162,7 @@ public class TableGenerator {
                 weightEt.setTextColor(context.getResources().getColor(R.color.basicTextColor));
                 weightEt.setFilters(new InputFilter[] { new InputFilter.LengthFilter(2), numericFilter });
                 weightEt.setTextSize(22);
+                weightEt.setTextColor(themeApplier.getGeneralTextColor());
                 weightEt.setText(String.valueOf(exercise.getWeightUsed()));
                 weightEt.setSelectAllOnFocus(true);
                 weightEt.setPadding(5, 5, 5, 5);

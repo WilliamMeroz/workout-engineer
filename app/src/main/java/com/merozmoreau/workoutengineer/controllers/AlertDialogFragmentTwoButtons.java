@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+// Same as AlerDialogFragment but has 2 buttons for the user to interact with.
 public class AlertDialogFragmentTwoButtons extends DialogFragment {
 
     private Context context;

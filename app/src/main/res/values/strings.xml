@@ -30,6 +30,20 @@
     <string name="no_button">No</string>
     <string name="action_not_performed">Action not performed</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="no_exercises_error">You cannot create a workout without exercises!</string>
+    <string name="all">All</string>
+    <string name="arms">Arms</string>
+    <string name="legs">Legs</string>
+    <string name="core">Core</string>
+    <string name="back">Back</string>
+    <string name="custom_exercises">Custom</string>
+    <string name="about_message">App made by William Meroz-Moreau</string>
+    <string name="ok_button">OK</string>
+    <string name="select_workout">Select Workout</string>
+    <string name="workout_title">Workout</string>
+    <string name="edit_workout_title">Edit Workout</string>
+    <string name="select_exercises_title">Select Exercises</string>
+    <string name="create_workout_title">Create Workout</string>
 
     <!-- Settings strings -->
     <string name="theme_title">Theme</string>
@@ -39,4 +53,12 @@
 
     <string name="metric_title">Metric</string>
     <string name="list_preference_title">Metric System</string>
+    <string name="create_new_workout_button">Create new workout button</string>
+    <string name="add_new_exercise_title">Add new exercise</string>
+    <string name="add_a_new_exercise_title">Add a new exercise</string>
+    <string name="exercise_name_hint_et">Exercise name</string>
+    <string name="exercise_description_hint">Exercise description</string>
+    <string name="create_exercise_button_text">Create exercise</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="see_api_menu_item">See API</string>
 </resources>

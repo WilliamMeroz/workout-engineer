@@ -12,6 +12,7 @@ public class Workout {
     private List<Exercise> exercisesList;
 
     public Workout() {
+        // I know this is far from being the best way of generating an ID, but it fits our purposes.
         id = new Random().nextInt();
         exercisesList = new ArrayList<>();
     }

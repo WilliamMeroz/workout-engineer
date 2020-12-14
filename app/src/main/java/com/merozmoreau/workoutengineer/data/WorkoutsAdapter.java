@@ -17,20 +17,23 @@ import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.controllers.EditWorkoutActivity;
 import com.merozmoreau.workoutengineer.controllers.PerformWorkoutActivity;
 import com.merozmoreau.workoutengineer.models.Workout;
+import com.merozmoreau.workoutengineer.utils.ThemeApplier;
 
 import java.util.List;
 
 public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.ViewHolder> {
-    // We need the list of workouts fetches from Firebase and the context.
+    // We need the list of workouts fetched from Firebase and the context.
     private final Context context;
     private final List<Workout> workouts;
     private final Gson gson;
     private final int ACTION_MODE;
+    private ThemeApplier themeApplier;
 
     public WorkoutsAdapter(Context context, List<Workout> workouts, int action) {
         this.context = context;
         this.workouts = workouts;
         gson = new Gson();
+        themeApplier = new ThemeApplier(context);
         ACTION_MODE = action;
     }
 
@@ -45,6 +48,8 @@ public class WorkoutsAdapter extends RecyclerView.Adapter<WorkoutsAdapter.ViewHo
     public void onBindViewHolder(@NonNull WorkoutsAdapter.ViewHolder holder, final int position) {
         final Workout workout = workouts.get(position);
         holder.workoutName.setText(workout.getName());
+        holder.workoutName.setTextColor(themeApplier.getGeneralTextColor());
+        holder.rootParent.setCardBackgroundColor(themeApplier.getBackgroundColor());
         holder.rootParent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

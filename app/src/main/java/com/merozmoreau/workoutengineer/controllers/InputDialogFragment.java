@@ -17,6 +17,7 @@ import androidx.fragment.app.DialogFragment;
 import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.models.Workout;
 
+// DialogFragment used to let the user enter text in an EditText
 public class InputDialogFragment extends DialogFragment {
     private EditText editText;
     private Button button;
@@ -36,6 +37,7 @@ public class InputDialogFragment extends DialogFragment {
         editText = rootView.findViewById(R.id.workout_name_et);
         button = rootView.findViewById(R.id.input_dialog_button);
 
+        // This fragment is very flexible, and can perform any action using the callback.
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

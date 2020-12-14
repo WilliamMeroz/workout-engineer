@@ -6,7 +6,9 @@
     <color name="titleTextColor">#000000</color>
     <color name="iconTint">#000000</color>
     <color name="basicTextColor">#000000</color>
-    <color name="listItemSelected">#CBF3F7</color>
+    <color name="lightListItemSelected">#CBF3F7</color>
+    <color name="darkListItemSelected">#000000</color>
+    <color name="headerColor">#CBF3F7</color>
 
     <!-- Light Theme -->
     <color name="colorLightBackgroundColor">#FFFFFF</color>

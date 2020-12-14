@@ -1,27 +1,28 @@
 package com.merozmoreau.workoutengineer.controllers;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
+import android.text.Html;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.models.Exercise;
 import com.merozmoreau.workoutengineer.models.Workout;
 import com.merozmoreau.workoutengineer.utils.CompleteExerciseCallback;
-import com.merozmoreau.workoutengineer.utils.TableGenerator;
+import com.merozmoreau.workoutengineer.utils.OptionsMenuGeneral;
+import com.merozmoreau.workoutengineer.utils.ThemeApplier;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class PerformWorkoutActivity extends AppCompatActivity implements CompleteExerciseCallback {
+// Activity used when the user wants to start a workout
+public class PerformWorkoutActivity extends OptionsMenuGeneral implements CompleteExerciseCallback {
 
     private Workout workout;
     private List<Exercise> exercises;
@@ -29,6 +30,7 @@ public class PerformWorkoutActivity extends AppCompatActivity implements Complet
     private ProgressBar progressBar;
     private NonEditableTableFragment fragment;
     private AlertDialogFragment alertDialogFragment;
+    private ThemeApplier themeApplier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class PerformWorkoutActivity extends AppCompatActivity implements Complet
 
         initialize();
 
+        // We use the fragment to place a non-editable table.
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.table_placeholder, fragment);
@@ -46,9 +49,16 @@ public class PerformWorkoutActivity extends AppCompatActivity implements Complet
 
     private void initialize() {
         gson = new Gson();
+        themeApplier = new ThemeApplier(this);
         Intent intent = getIntent();
         workout = gson.fromJson(intent.getStringExtra("workout"), Workout.class);
         exercises = workout.getExercisesList();
+
+
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(themeApplier.getAppBarColor()));
+        getSupportActionBar().setTitle(Html.fromHtml(themeApplier.getAppbarTitleColor(getString(R.string.workout_title))));
+        findViewById(R.id.perform_workout_background).setBackgroundColor(themeApplier.getBackgroundColor());
+        ((TextView)findViewById(R.id.progress_title)).setTextColor(themeApplier.getGeneralTextColor());
 
         ArrayList<String> serializedExercises = new ArrayList<>();
 

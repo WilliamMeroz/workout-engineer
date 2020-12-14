@@ -1,14 +1,15 @@
 package com.merozmoreau.workoutengineer.utils;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.graphics.Color;
+import android.text.Html;
+import android.text.Spanned;
 import android.util.Log;
 
 import androidx.preference.PreferenceManager;
 
 import com.merozmoreau.workoutengineer.R;
 
+// Class used to return the different colors needs to change the theme of the app depending on the boolean value in the SharedPreferences.
 public class ThemeApplier {
 
     Context context;
@@ -20,6 +21,8 @@ public class ThemeApplier {
     private int darkThemeGeneralText;
     private int darkThemeAppBar;
     private int lightThemeAppBar;
+    private int lightSelectedColor;
+    private int darkSelectedColor;
 
     public ThemeApplier(Context context) {
         this.context = context;
@@ -31,6 +34,8 @@ public class ThemeApplier {
         darkThemeGeneralText = context.getResources().getColor(R.color.colorTextDarkTheme);
         darkThemeAppBar = context.getResources().getColor(R.color.colorDarkAppbar);
         lightThemeAppBar = context.getResources().getColor(R.color.colorLightAppbar);
+        lightSelectedColor = context.getResources().getColor(R.color.lightListItemSelected);
+        darkSelectedColor = context.getResources().getColor(R.color.darkListItemSelected);
     }
 
     public int getBackgroundColor() {
@@ -52,5 +57,19 @@ public class ThemeApplier {
             return darkThemeAppBar;
         else
             return lightThemeAppBar;
+    }
+
+    public String getAppbarTitleColor(String title) {
+        if (darkThemeApplied)
+            return String.format("<font color='#FFFFFF'>%s</font>", title);
+        else
+            return String.format("<font color='#000000'>%s</font>", title);
+    }
+
+    public int getSelectColor() {
+        if (darkThemeApplied)
+            return darkSelectedColor;
+        else
+            return lightSelectedColor;
     }
 }

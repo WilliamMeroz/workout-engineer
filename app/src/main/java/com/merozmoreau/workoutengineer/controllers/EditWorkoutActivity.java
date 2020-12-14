@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,11 +23,13 @@ import com.merozmoreau.workoutengineer.models.Workout;
 import com.merozmoreau.workoutengineer.utils.GeneralCallback;
 import com.merozmoreau.workoutengineer.utils.OptionsMenuGeneral;
 import com.merozmoreau.workoutengineer.utils.TableGenerator;
+import com.merozmoreau.workoutengineer.utils.ThemeApplier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+// Activity used to edit a workout
 public class EditWorkoutActivity extends OptionsMenuGeneral {
 
     private Gson gson;
@@ -33,6 +37,7 @@ public class EditWorkoutActivity extends OptionsMenuGeneral {
     private WorkoutDa db;
     private EditableTableFragment editableTableFragment;
     private HashMap<Exercise, List<EditText>> exercisesAndViews;
+    private ThemeApplier themeApplier;
 
     private FragmentManager fragmentManager;
     private AlertDialogFragmentTwoButtons alertDialogFragmentTwoButtons;
@@ -46,8 +51,10 @@ public class EditWorkoutActivity extends OptionsMenuGeneral {
 
         initialize();
 
+        // We add the fragment with the editable table.
         fragmentManager.beginTransaction().add(R.id.table_placeholder_edit, editableTableFragment).commit();
 
+        // Once the user is done, we create a new workout object
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +72,7 @@ public class EditWorkoutActivity extends OptionsMenuGeneral {
                     newWorkout.addExerciseToWorkout(exercise);
                 }
 
+                // We upadte the database with the new workout object
                 newWorkout.setName(workout.getName());
                 newWorkout.setId(workout.getId());
                 db.updateWorkout(newWorkout.getId(), newWorkout);
@@ -77,13 +85,17 @@ public class EditWorkoutActivity extends OptionsMenuGeneral {
 
     private void initialize() {
         button = findViewById(R.id.finish_edit_workout);
-
+        themeApplier = new ThemeApplier(this);
         fragmentManager = getSupportFragmentManager();
         gson = new Gson();
         editableTableFragment = new EditableTableFragment();
         db = new WorkoutDa();
 
         workout = gson.fromJson(getIntent().getStringExtra("workout"), Workout.class);
+
+        findViewById(R.id.edit_workout_background).setBackgroundColor(themeApplier.getBackgroundColor());
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(themeApplier.getAppBarColor()));
+        getSupportActionBar().setTitle(Html.fromHtml(themeApplier.getAppbarTitleColor(getString(R.string.edit_workout_title))));
 
         ArrayList<String> tempList = new ArrayList<>();
 
@@ -105,6 +117,7 @@ public class EditWorkoutActivity extends OptionsMenuGeneral {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // If the user clicks on the trashcan icon
         if (item.getItemId() == R.id.delete_workout_item) {
             GeneralCallback yesCallback = new GeneralCallback() {
                 @Override

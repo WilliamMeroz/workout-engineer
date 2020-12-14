@@ -25,6 +25,8 @@ import java.util.ArrayList;
  * Use the {@link EditableTableFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+// This fragment is used to display a table with EditTexts so that the user can edit the sets, reps and weight values
 public class EditableTableFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -68,6 +70,7 @@ public class EditableTableFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
+            // Transform the serialized objects back real Exercise objects
             serializedExercises = getArguments().getStringArrayList("exercises");
             exercises = new ArrayList<>();
 
@@ -82,6 +85,7 @@ public class EditableTableFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        // Generate the table
         ScrollView scrollView = tableGenerator.generateRootView();
         TableLayout tableLayout = tableGenerator.generateTableLayout();
         tableLayout.addView(tableGenerator.generateTableHeader());

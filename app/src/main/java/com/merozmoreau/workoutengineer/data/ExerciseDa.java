@@ -66,7 +66,7 @@ public class ExerciseDa {
     }
 
     public void addExercise(Exercise exercise) {
-        db.collection(COLLECTION_NAME).document(String.valueOf(exercise.getId())).set(exercise).addOnSuccessListener(new OnSuccessListener<Void>() {
+        db.collection(COLLECTION_NAME).document(exercise.getName()).set(exercise).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d("test1", "add success");
@@ -83,8 +83,8 @@ public class ExerciseDa {
         });
     }
 
-    public void updateExercise(int id, Exercise exercise) {
-        db.collection(COLLECTION_NAME).document(String.valueOf(id)).set(exercise).addOnSuccessListener(new OnSuccessListener<Void>() {
+    public void updateExercise(String name, Exercise exercise) {
+        db.collection(COLLECTION_NAME).document(name).set(exercise).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d("test1", "update success");

@@ -14,22 +14,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.models.Exercise;
 import com.merozmoreau.workoutengineer.utils.OnExerciseItemClickListener;
+import com.merozmoreau.workoutengineer.utils.ThemeApplier;
 
 import java.util.HashMap;
 import java.util.List;
 
+// Adapter used to feed data into the Exercises ReyclerView
 public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapter.ViewHolder> {
 
     private List<Exercise> exercises;
     private HashMap<Exercise, Boolean> hasBeenPicked;
     private Context context;
-    OnExerciseItemClickListener exerciseItemClickListener;
+    private OnExerciseItemClickListener exerciseItemClickListener;
+    private ThemeApplier themeApplier;
 
     public ExerciseListAdapter(Context context, List<Exercise> exercises, OnExerciseItemClickListener exerciseItemClickListener) {
         this.exercises = exercises;
         this.context = context;
         this.exerciseItemClickListener = exerciseItemClickListener;
+        themeApplier = new ThemeApplier(context);
 
+        // Helps to see if an exercise has already been picked.
         hasBeenPicked = new HashMap<>();
         for (Exercise ex : this.exercises)
             hasBeenPicked.put(ex, false);
@@ -46,6 +51,8 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         holder.exerciseName.setText(exercises.get(position).getName());
+        holder.exerciseName.setTextColor(themeApplier.getGeneralTextColor());
+        holder.parentLayout.setCardBackgroundColor(themeApplier.getBackgroundColor());
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,10 +62,10 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
                 exerciseItemClickListener.onItemClick(exercises.get(position));
 
                     if (!hasBeenPicked.get(ex)) {
-                        view.setBackgroundColor(context.getResources().getColor(R.color.listItemSelected));
+                        view.setBackgroundColor(themeApplier.getSelectColor());
                         hasBeenPicked.put(ex, true);
                     } else {
-                        view.setBackgroundColor(Color.WHITE);
+                        view.setBackgroundColor(themeApplier.getBackgroundColor());
                         hasBeenPicked.put(ex, false);
                     }
             }

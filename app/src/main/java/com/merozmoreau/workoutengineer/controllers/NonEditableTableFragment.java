@@ -26,6 +26,8 @@ import java.util.Collections;
  * Use the {@link NonEditableTableFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+// Fragment to create a non-editable table, used by the PerformWorkout activity.
 public class NonEditableTableFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -90,6 +92,8 @@ public class NonEditableTableFragment extends Fragment {
         ScrollView scrollView = tableGenerator.generateRootView();
         TableLayout tableLayout = tableGenerator.generateTableLayout();
         tableLayout.addView(tableGenerator.generateTableHeader());
+
+        // Set clickListener on each row of the table, so the user can track his progress.
         for (TableRow row : tableGenerator.generateTableBody()) {
             row.setOnClickListener(new View.OnClickListener() {
                 @Override

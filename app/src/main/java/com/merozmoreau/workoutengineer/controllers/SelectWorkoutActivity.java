@@ -1,25 +1,32 @@
 package com.merozmoreau.workoutengineer.controllers;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 
 import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.data.WorkoutDa;
 import com.merozmoreau.workoutengineer.data.WorkoutDaCallback;
 import com.merozmoreau.workoutengineer.data.WorkoutsAdapter;
 import com.merozmoreau.workoutengineer.models.Workout;
+import com.merozmoreau.workoutengineer.utils.OptionsMenuGeneral;
+import com.merozmoreau.workoutengineer.utils.ThemeApplier;
+
 import java.util.List;
 
-public class SelectWorkoutActivity extends AppCompatActivity {
+// Activity used to select a workout.
+public class SelectWorkoutActivity extends OptionsMenuGeneral {
 
     private RecyclerView recyclerView;
     private WorkoutsAdapter adapter;
     private WorkoutDa db;
+    private ThemeApplier themeApplier;
 
     private Context context;
 
@@ -60,5 +67,10 @@ public class SelectWorkoutActivity extends AppCompatActivity {
         db = new WorkoutDa();
         recyclerView = findViewById(R.id.workout_recyclerView);
         context = this;
+        themeApplier = new ThemeApplier(this);
+
+        findViewById(R.id.select_workout_background).setBackgroundColor(themeApplier.getBackgroundColor());
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(themeApplier.getAppBarColor()));
+        getSupportActionBar().setTitle(Html.fromHtml(themeApplier.getAppbarTitleColor(getString(R.string.select_workout))));
     }
 }

@@ -16,6 +16,7 @@ import androidx.fragment.app.DialogFragment;
 
 import com.merozmoreau.workoutengineer.R;
 
+// Simple DialogFragment class used to display alerts.
 public class AlertDialogFragment extends DialogFragment {
     private Context context;
     private Button button;
@@ -38,6 +39,7 @@ public class AlertDialogFragment extends DialogFragment {
         button = rootView.findViewById(R.id.alert_dialog_button);
         button.setText(dialogButtonText);
 
+        // Trough the use of these TextViews, we can customize the alert to whatever we want.
         TextView title = rootView.findViewById(R.id.alert_dialog_title);
         title.setText(dialogTitle);
 

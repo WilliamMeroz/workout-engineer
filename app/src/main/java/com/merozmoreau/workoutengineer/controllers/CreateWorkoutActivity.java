@@ -1,6 +1,5 @@
 package com.merozmoreau.workoutengineer.controllers;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -8,9 +7,13 @@ import com.merozmoreau.workoutengineer.R;
 import com.merozmoreau.workoutengineer.data.WorkoutDa;
 import com.merozmoreau.workoutengineer.models.Exercise;
 import com.merozmoreau.workoutengineer.models.Workout;
+import com.merozmoreau.workoutengineer.utils.OptionsMenuGeneral;
+import com.merozmoreau.workoutengineer.utils.ThemeApplier;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,13 +21,15 @@ import android.widget.EditText;
 import java.util.HashMap;
 import java.util.List;
 
-public class CreateWorkoutActivity extends AppCompatActivity {
-    WorkoutDa db;
+// Activity that creates the workout
+public class CreateWorkoutActivity extends OptionsMenuGeneral {
+    private WorkoutDa db;
+    private ThemeApplier themeApplier;
 
-    HashMap<Exercise, List<EditText>> exercisesAndViews;
-    EditableTableFragment fragment;
-    Context context;
-    Button button;
+    private HashMap<Exercise, List<EditText>> exercisesAndViews;
+    private EditableTableFragment fragment;
+    private Context context;
+    private Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +38,7 @@ public class CreateWorkoutActivity extends AppCompatActivity {
 
         initialize();
 
+        // We display the Fragment that shows the table with the exercises in them.
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.editable_table_placeholder, fragment);
@@ -56,13 +62,15 @@ public class CreateWorkoutActivity extends AppCompatActivity {
                     workout.addExerciseToWorkout(exercise);
                 }
 
+                // We ask the user to enter a name for the workout
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 InputDialogFragment dialogFragment = new InputDialogFragment(context, new InputDialogCallback() {
                     @Override
                     public void performAction(String data) {
                         workout.setName(data);
                         db.addWorkout(workout);
-                    }
+
+                   }
                 });
                 dialogFragment.show(fragmentManager, "Workout Name Dialog");
             }
@@ -71,9 +79,15 @@ public class CreateWorkoutActivity extends AppCompatActivity {
 
     private void initialize() {
         db = new WorkoutDa();
+        themeApplier = new ThemeApplier(this);
         context = this;
         button = findViewById(R.id.finish_create_workout);
 
+        findViewById(R.id.create_workout_background).setBackgroundColor(themeApplier.getBackgroundColor());
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(themeApplier.getAppBarColor()));
+        getSupportActionBar().setTitle(Html.fromHtml(themeApplier.getAppbarTitleColor(getString(R.string.create_workout_title))));
+
+        // Pass this bundle to the Fragment that needs to display the table.
         Bundle bundle = new Bundle();
         bundle.putStringArrayList("exercises", getIntent().getStringArrayListExtra("exercises"));
 

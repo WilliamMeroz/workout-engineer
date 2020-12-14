@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/CustomAppTheme">
+        <activity android:name=".controllers.AddExerciseActivity"></activity>
         <activity
             android:name=".controllers.SettingsActivity"
             android:label="@string/title_activity_settings" />
@@ -19,7 +20,9 @@
         <activity android:name=".controllers.PerformWorkoutActivity" />
         <activity android:name=".controllers.SelectWorkoutActivity" />
         <activity android:name=".controllers.CreateWorkoutActivity" />
-        <activity android:name=".controllers.SelectExercises" />
+        <activity
+            android:name=".controllers.SelectExercises"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".utils.OptionsMenuGeneral" />
         <activity android:name=".controllers.MainActivity">
             <intent-filter>

@@ -17,8 +17,8 @@
         <item name="android:src">@drawable/ic_baseline_more_vert_black_24</item>
     </style>
 
-    <style name="CustomDarkTheme">
-        <item name="android:textColor">#FF0000</item>
-        <item name="android:colorBackground">@color/colorDarkBackgroundColor</item>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 </resources>
